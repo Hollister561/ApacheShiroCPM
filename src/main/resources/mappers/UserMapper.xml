@@ -25,4 +25,5 @@
         inner join permission p on pr.pid = p.pid
         where u.username = #{username}
     </select>
+
 </mapper>

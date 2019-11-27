@@ -30,6 +30,9 @@ public class ShiroConfiguration {
 
         LinkedHashMap<String,String> filterChainDefinitionMap = new LinkedHashMap<>();
         filterChainDefinitionMap.put("/index","authc");
+        filterChainDefinitionMap.put("/login","anon");
+        filterChainDefinitionMap.put("/loginUser","anon");
+        filterChainDefinitionMap.put("/**","user");
         bean.setFilterChainDefinitionMap(filterChainDefinitionMap);
 
         return bean;
@@ -70,5 +73,4 @@ public class ShiroConfiguration {
         creator.setProxyTargetClass(true);
         return creator;
     }
-
 }
